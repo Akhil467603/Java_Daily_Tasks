@@ -1,46 +1,48 @@
 package com.dailytask.problem_solving;
 
+class Employee {
+    int empID;
+    String empName;
+    double salary;
+
+    double houseRentAllowance;
+    double dearnessAllowance;
+    double providentFund;
+    double grossSalary;
+    double netSalary;
+
+    Employee() {
+        System.out.println("WELCOME, Pass Employee ID, Name and Salary in Constructor");
+    }
+
+    Employee(int empID, String empName, double salary) {
+        this.empID = empID;
+        this.empName = empName;
+        this.salary = salary;
+
+        this.houseRentAllowance = this.salary * 0.20;
+        this.dearnessAllowance = this.salary * 0.10;
+        this.providentFund = this.salary * 0.12;
+        this.grossSalary = this.salary + this.houseRentAllowance + this.dearnessAllowance;
+        this.netSalary = this.grossSalary - this.providentFund;
+    }
+
+    public void displayEmployeeDetails() {
+        System.out.println("Employee ID: "+empID);
+        System.out.println("Employee Name: "+empName);
+        System.out.println("Basic Salary: "+salary);
+        System.out.println("HRA: "+houseRentAllowance);
+        System.out.println("DA: "+dearnessAllowance);
+        System.out.println("PF: "+providentFund);
+        System.out.println("Gross Salary: "+grossSalary);
+        System.out.println("Net Salary: "+netSalary);
+    }
+
+}
+
 public class Employee_Salary_Management_System {
-
-	int employeeId;
-	String employeeName;
-	double esalary;
-	double ehra;
-	double eda;
-	double pf;
-	double grosssalary;
-	double netsalary;
-
-	Employee_Salary_Management_System(int employeeId, String employeeName, double esalary) {
-		this.employeeId = employeeId;
-		this.employeeName = employeeName;
-		this.esalary = esalary;
-
-		this.ehra = this.esalary * 0.20;
-		this.eda = this.esalary * 0.10;
-		this.pf = this.esalary * 0.12;
-		this.grosssalary = esalary + ehra + eda;
-		this.netsalary = grosssalary - pf;
-	}
-
-	public void displayDetails() {
-		System.out.println("EMPLOYEE SALARY MANAGEMENT SYSTEM");
-		System.out.println("===========================================");
-		System.out.println("EMPLOYEE ID= " + employeeId);
-		System.out.println("EMPLOYEE NAME= " + employeeName);
-		System.out.println("EMPLOYEE SALARY= " + esalary);
-		System.out.println("EMPLOYEE HOUSE RENTAL ALLOWENCE= " + ehra);
-		System.out.println("EMPLOYEE DAILY ALLOWENCE= " + eda);
-		System.out.println("EMPLOYEE PROVIDENT FUND= " + pf);
-		System.out.println("EMPLOYEE GROSS SALARY= " + grosssalary);
-		System.out.println("EMPLOYEE GROSS SALARY= " + netsalary);
-
-	}
-
-	public static void main(String[] args) {
-		Employee_Salary_Management_System e = new Employee_Salary_Management_System(1, "MUSHKE AKHIL", 30000);
-		e.displayDetails();
-
-	}
-
+    static void main() {
+        Employee emp1 = new Employee(1, "Goutham", 30000);
+        emp1.displayEmployeeDetails();
+    }
 }

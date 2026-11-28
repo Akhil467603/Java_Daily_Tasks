@@ -1,17 +1,6 @@
 package com.dailytask.problem_solving;
 
-class Employee{
-	int empId;
-	String name;
-	double salary;
-	Employee(int empId,String name,double salary){
-		
-	}
-	public void displayEmployeeDetails() {
-		System.out.println("EmployeeId:"+empId);
-	}
 
-}
 class Attendance extends Employee {
     int totalWorkingDays = 30;
     int presentDays;
